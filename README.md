@@ -1,4 +1,5 @@
 # DocxPdf2Xlsx
+**English** | [Русский](README_RU.md)
 
 A toolkit for extracting tables from DOCX and PDF documents and converting them to Excel format using vision-language models.
 
