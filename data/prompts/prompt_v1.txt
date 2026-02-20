@@ -1,0 +1,25 @@
+Extract all table data from the image and output it in the following JSON format.
+
+CRITICAL RULES:
+1. "наименование" (Description/Name) field often spans multiple lines in the document. You MUST merge all continuation lines into a single string.
+2. If a row contains text in the "наименование" column but NO numerical values in year columns (2024_год, 2025_год, 2026_год), it is a continuation of the previous row's description.
+3. Numbers typically appear at the bottom of each logical record - use this to identify where one record ends and another begins.
+4. Preserve all numerical values exactly as shown, including decimals.
+5. Keep budget classification codes (рз, пр, цср, вр) as separate fields.
+6. Output ONLY valid JSON - no additional text, explanations, or comments.
+7. If a cell is empty, use an empty string "".
+
+FIELD DESCRIPTIONS:
+- "наименование": Full name/description of the budget item (may be multi-line in source)
+- "рз": Budget classification code (раздел)
+- "пр": Budget classification code (подраздел)
+- "цср": Target article code (целевая статья)
+- "вр": Expense type code (вид расходов)
+- "2024_год": Amount for year 2024
+- "2025_год": Amount for year 2025
+- "2026_год": Amount for year 2026
+
+OUTPUT SCHEMA:
+{INPUTT}
+
+Remember: Merge multi-line descriptions into single "наименование" entries. A row without year values is NOT a separate record.

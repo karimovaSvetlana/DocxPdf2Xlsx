@@ -66,3 +66,6 @@ typer==0.23.1
 typer-slim==0.23.1
 typing-extensions==4.15.0
 urllib3==2.6.3
+python-docx>=0.8.11
+aiogram>=3.0.0
+json-repair>=0.7.0
